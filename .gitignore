@@ -1,0 +1,104 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Python
+# ─────────────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Secrets and local configuration
+# ─────────────────────────────────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+secrets/
+credentials/
+service-account*.json
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Local data — never push real or generated operational data
+# Keep only safe, intentional samples in data/sample/
+# ─────────────────────────────────────────────────────────────────────────────
+data/raw/
+data/processed/
+data/private/
+data/local/
+*.csv
+*.parquet
+*.jsonl
+*.duckdb
+*.db
+*.sqlite
+*.sqlite3
+
+# Explicitly allow intentional sample data later
+!data/sample/
+!data/sample/**
+!*.example.csv
+!*.example.json
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Logs, runtime state, uploads
+# ─────────────────────────────────────────────────────────────────────────────
+logs/
+tmp/
+temp/
+runtime/
+uploads/
+*.log
+*.pid
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Docker, monitoring and local service volumes
+# ─────────────────────────────────────────────────────────────────────────────
+postgres_data/
+prometheus_data/
+grafana_data/
+loki_data/
+tempo_data/
+redis_data/
+rabbitmq_data/
+docker-volumes/
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Infrastructure state — sensitive or machine-specific
+# ─────────────────────────────────────────────────────────────────────────────
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Editors and operating systems
+# ─────────────────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
