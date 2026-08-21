@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: raw
+    description: Raw operational events loaded from the local JSONL journal.
+    schema: main
+    tables:
+      - name: raw_order_events
+        description: One row for each event emitted by the order API.

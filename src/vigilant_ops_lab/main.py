@@ -2,6 +2,7 @@
 
 from fastapi import FastAPI, status
 
+from vigilant_ops_lab.events import record_order_created
 from vigilant_ops_lab.schemas import Order, OrderCreate
 
 app = FastAPI(
@@ -24,10 +25,9 @@ def health() -> dict[str, str]:
     tags=["orders"],
 )
 def create_order(order_request: OrderCreate) -> Order:
-    """
-    Validate an incoming order and return its initial system record.
+    """Validate an order, then record its creation as an operational event."""
+    new_order = Order(**order_request.model_dump())
 
-    Persistence is intentionally not implemented yet.
-    Chapter 03 will save this record in PostgreSQL.
-    """
-    return Order(**order_request.model_dump())
+    record_order_created(new_order)
+
+    return new_order

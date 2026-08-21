@@ -1,0 +1,11 @@
+name: vigilant_ops_analytics
+version: "1.0.0"
+config-version: 2
+
+profile: vigilant_ops_lab
+
+model-paths: ["models"]
+
+models:
+  vigilant_ops_analytics:
+    +materialized: view

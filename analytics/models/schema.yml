@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: stg_order_events
+    description: Clean and typed operational events emitted by the order API.
+    columns:
+      - name: event_id
+        tests:
+          - not_null
+          - unique
+
+      - name: event_type
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ["order_created"]
+
+      - name: event_at
+        tests:
+          - not_null
+
+      - name: order_id
+        tests:
+          - not_null
+
+      - name: amount_cents
+        tests:
+          - not_null

@@ -1,0 +1,8 @@
+vigilant_ops_lab:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: ../data/vigilant_ops.duckdb
+      schema: main
+      threads: 1
